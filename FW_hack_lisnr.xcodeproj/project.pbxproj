@@ -10,10 +10,17 @@
 		BD8A946D1D39515100DF8D86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A946C1D39515100DF8D86 /* AppDelegate.swift */; };
 		BD8A946F1D39515100DF8D86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A946E1D39515100DF8D86 /* ViewController.swift */; };
 		BD8A94721D39515100DF8D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8A94701D39515100DF8D86 /* Main.storyboard */; };
-		BD8A94741D39515100DF8D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8A94731D39515100DF8D86 /* Assets.xcassets */; };
 		BD8A94771D39515100DF8D86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8A94751D39515100DF8D86 /* LaunchScreen.storyboard */; };
 		BD8A94821D39515100DF8D86 /* FW_hack_lisnrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A94811D39515100DF8D86 /* FW_hack_lisnrTests.swift */; };
 		BD8A948D1D39515100DF8D86 /* FW_hack_lisnrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A948C1D39515100DF8D86 /* FW_hack_lisnrUITests.swift */; };
+		BD8A949B1D397BB500DF8D86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8A949A1D397BB500DF8D86 /* Images.xcassets */; };
+		BD8A949D1D397C5500DF8D86 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8A949C1D397C5500DF8D86 /* CustomOverlayView.xib */; };
+		BD8A94A01D397C5E00DF8D86 /* BackgroundAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A949E1D397C5E00DF8D86 /* BackgroundAnimationViewController.swift */; };
+		BD8A94A11D397C5E00DF8D86 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A949F1D397C5E00DF8D86 /* BackgroundKolodaAnimator.swift */; };
+		BD8A94A31D397C6A00DF8D86 /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A94A21D397C6A00DF8D86 /* ExampleOverlayView.swift */; };
+		BD8A94A61D397C7200DF8D86 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A94A41D397C7200DF8D86 /* CustomKolodaView.swift */; };
+		BD8A94A71D397C7200DF8D86 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A94A51D397C7200DF8D86 /* CustomOverlayView.swift */; };
+		F0D8455205AA736CFC6EF1B9 /* Pods_FW_hack_lisnr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1914A3BD1EF4325D5914D46 /* Pods_FW_hack_lisnr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70FE137AC98F76F8520B7D3E /* Pods_FW_hack_lisnrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FW_hack_lisnrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7BE1A106884E5357E6A5395 /* Pods_FW_hack_lisnrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FW_hack_lisnrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8A94691D39515100DF8D86 /* FW_hack_lisnr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FW_hack_lisnr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8A946C1D39515100DF8D86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD8A946E1D39515100DF8D86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD8A94711D39515100DF8D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BD8A94731D39515100DF8D86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD8A94761D39515100DF8D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD8A94781D39515100DF8D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD8A947D1D39515100DF8D86 /* FW_hack_lisnrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FW_hack_lisnrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +55,16 @@
 		BD8A94881D39515100DF8D86 /* FW_hack_lisnrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FW_hack_lisnrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8A948C1D39515100DF8D86 /* FW_hack_lisnrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FW_hack_lisnrUITests.swift; sourceTree = "<group>"; };
 		BD8A948E1D39515100DF8D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD8A949A1D397BB500DF8D86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BD8A949C1D397C5500DF8D86 /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
+		BD8A949E1D397C5E00DF8D86 /* BackgroundAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimationViewController.swift; sourceTree = "<group>"; };
+		BD8A949F1D397C5E00DF8D86 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
+		BD8A94A21D397C6A00DF8D86 /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
+		BD8A94A41D397C7200DF8D86 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
+		BD8A94A51D397C7200DF8D86 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		C1914A3BD1EF4325D5914D46 /* Pods_FW_hack_lisnr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FW_hack_lisnr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D5DA3E0687427AC8833962 /* Pods-FW_hack_lisnr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FW_hack_lisnr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FW_hack_lisnr/Pods-FW_hack_lisnr.debug.xcconfig"; sourceTree = "<group>"; };
+		FE082169D17153B7FEE1C078 /* Pods-FW_hack_lisnr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FW_hack_lisnr.release.xcconfig"; path = "Pods/Target Support Files/Pods-FW_hack_lisnr/Pods-FW_hack_lisnr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D8455205AA736CFC6EF1B9 /* Pods_FW_hack_lisnr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +93,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E3BDB08D3D49E0CFE7818F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1914A3BD1EF4325D5914D46 /* Pods_FW_hack_lisnr.framework */,
+				70FE137AC98F76F8520B7D3E /* Pods_FW_hack_lisnrTests.framework */,
+				A7BE1A106884E5357E6A5395 /* Pods_FW_hack_lisnrUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		943DE97D80B1207CA7857415 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9D5DA3E0687427AC8833962 /* Pods-FW_hack_lisnr.debug.xcconfig */,
+				FE082169D17153B7FEE1C078 /* Pods-FW_hack_lisnr.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BD8A94601D39515100DF8D86 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				BD8A94801D39515100DF8D86 /* FW_hack_lisnrTests */,
 				BD8A948B1D39515100DF8D86 /* FW_hack_lisnrUITests */,
 				BD8A946A1D39515100DF8D86 /* Products */,
+				943DE97D80B1207CA7857415 /* Pods */,
+				6E3BDB08D3D49E0CFE7818F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +139,14 @@
 			children = (
 				BD8A946C1D39515100DF8D86 /* AppDelegate.swift */,
 				BD8A946E1D39515100DF8D86 /* ViewController.swift */,
+				BD8A949E1D397C5E00DF8D86 /* BackgroundAnimationViewController.swift */,
+				BD8A949F1D397C5E00DF8D86 /* BackgroundKolodaAnimator.swift */,
+				BD8A94A21D397C6A00DF8D86 /* ExampleOverlayView.swift */,
+				BD8A94A41D397C7200DF8D86 /* CustomKolodaView.swift */,
+				BD8A94A51D397C7200DF8D86 /* CustomOverlayView.swift */,
 				BD8A94701D39515100DF8D86 /* Main.storyboard */,
-				BD8A94731D39515100DF8D86 /* Assets.xcassets */,
+				BD8A949C1D397C5500DF8D86 /* CustomOverlayView.xib */,
+				BD8A949A1D397BB500DF8D86 /* Images.xcassets */,
 				BD8A94751D39515100DF8D86 /* LaunchScreen.storyboard */,
 				BD8A94781D39515100DF8D86 /* Info.plist */,
 			);
@@ -132,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD8A94911D39515100DF8D86 /* Build configuration list for PBXNativeTarget "FW_hack_lisnr" */;
 			buildPhases = (
+				38E4AF085FCDCAD5648360D3 /* [CP] Check Pods Manifest.lock */,
 				BD8A94651D39515100DF8D86 /* Sources */,
 				BD8A94661D39515100DF8D86 /* Frameworks */,
 				BD8A94671D39515100DF8D86 /* Resources */,
+				37E6AD9D3B44BAB3D2E3D12C /* [CP] Embed Pods Frameworks */,
+				4E78054D0F2CCBF101C7AE17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD8A94941D39515100DF8D86 /* Build configuration list for PBXNativeTarget "FW_hack_lisnrTests" */;
 			buildPhases = (
+				DA2E46A8543BE5C28E0AF669 /* [CP] Check Pods Manifest.lock */,
 				BD8A94791D39515100DF8D86 /* Sources */,
 				BD8A947A1D39515100DF8D86 /* Frameworks */,
 				BD8A947B1D39515100DF8D86 /* Resources */,
+				C526D23AFF56DCACD209524E /* [CP] Embed Pods Frameworks */,
+				935BC325F1826BDCDAB238AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD8A94971D39515100DF8D86 /* Build configuration list for PBXNativeTarget "FW_hack_lisnrUITests" */;
 			buildPhases = (
+				E59ADD0464FE47B7F83EF2C6 /* [CP] Check Pods Manifest.lock */,
 				BD8A94841D39515100DF8D86 /* Sources */,
 				BD8A94851D39515100DF8D86 /* Frameworks */,
 				BD8A94861D39515100DF8D86 /* Resources */,
+				E1F619832F84635BBA5FF720 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,7 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8A94771D39515100DF8D86 /* LaunchScreen.storyboard in Resources */,
-				BD8A94741D39515100DF8D86 /* Assets.xcassets in Resources */,
+				BD8A949B1D397BB500DF8D86 /* Images.xcassets in Resources */,
+				BD8A949D1D397C5500DF8D86 /* CustomOverlayView.xib in Resources */,
 				BD8A94721D39515100DF8D86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,12 +306,140 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37E6AD9D3B44BAB3D2E3D12C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FW_hack_lisnr/Pods-FW_hack_lisnr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38E4AF085FCDCAD5648360D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4E78054D0F2CCBF101C7AE17 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FW_hack_lisnr/Pods-FW_hack_lisnr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		935BC325F1826BDCDAB238AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FW_hack_lisnrTests/Pods-FW_hack_lisnrTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C526D23AFF56DCACD209524E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FW_hack_lisnrTests/Pods-FW_hack_lisnrTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA2E46A8543BE5C28E0AF669 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1F619832F84635BBA5FF720 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FW_hack_lisnrUITests/Pods-FW_hack_lisnrUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E59ADD0464FE47B7F83EF2C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD8A94651D39515100DF8D86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8A94A01D397C5E00DF8D86 /* BackgroundAnimationViewController.swift in Sources */,
+				BD8A94A31D397C6A00DF8D86 /* ExampleOverlayView.swift in Sources */,
+				BD8A94A71D397C7200DF8D86 /* CustomOverlayView.swift in Sources */,
 				BD8A946F1D39515100DF8D86 /* ViewController.swift in Sources */,
+				BD8A94A61D397C7200DF8D86 /* CustomKolodaView.swift in Sources */,
+				BD8A94A11D397C5E00DF8D86 /* BackgroundKolodaAnimator.swift in Sources */,
 				BD8A946D1D39515100DF8D86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,22 +580,24 @@
 		};
 		BD8A94921D39515100DF8D86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9D5DA3E0687427AC8833962 /* Pods-FW_hack_lisnr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FW_hack_lisnr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "FreeWheel.FW-hack-lisnr";
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.FreeWheel.FW-hack-lisnr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		BD8A94931D39515100DF8D86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE082169D17153B7FEE1C078 /* Pods-FW_hack_lisnr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FW_hack_lisnr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "FreeWheel.FW-hack-lisnr";
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.FreeWheel.FW-hack-lisnr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -482,6 +667,7 @@
 				BD8A94931D39515100DF8D86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD8A94941D39515100DF8D86 /* Build configuration list for PBXNativeTarget "FW_hack_lisnrTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +676,7 @@
 				BD8A94961D39515100DF8D86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD8A94971D39515100DF8D86 /* Build configuration list for PBXNativeTarget "FW_hack_lisnrUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +685,7 @@
 				BD8A94991D39515100DF8D86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

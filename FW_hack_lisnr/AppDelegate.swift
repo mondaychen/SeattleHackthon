@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  FW_hack_lisnr
+//  Koloda
 //
-//  Created by Mengdi Chen on 7/15/16.
-//  Copyright © 2016 Mengdi Chen. All rights reserved.
+//  Created by Eugene Andreyev on 07/01/2015.
+//  Copyright (c) 07/01/2015 Eugene Andreyev. All rights reserved.
 //
 
 import UIKit

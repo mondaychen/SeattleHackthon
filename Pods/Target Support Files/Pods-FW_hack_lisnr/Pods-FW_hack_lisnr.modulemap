@@ -1,0 +1,6 @@
+framework module Pods_FW_hack_lisnr {
+  umbrella header "Pods-FW_hack_lisnr-umbrella.h"
+
+  export *
+  module * { export * }
+}
