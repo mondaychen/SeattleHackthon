@@ -94,18 +94,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
         
         print("Did receive content, \(toneId)")
         sharedData.imageSource = UIImage(named: String(toneId))
+        let adId = String(toneId)
+        if adId != sharedData.lastAdId {
+            sharedData.lastAdId = adId
+            sharedData.currentAdId = adId
+            let vc = self.window!.rootViewController as! ViewController
+            vc.adDetected()
+        }
         
         if(backgrounded!) {
             self.presentNotificationForContent(content)
-        } else {
-                let adId = String(toneId)
-                if adId != sharedData.lastAdId {
-                    sharedData.lastAdId = adId
-                    sharedData.currentAdId = adId
-                    let vc = self.window!.rootViewController as! ViewController
-                    vc.adDetected()
-                }
-            }
+        } 
         
     }
     
@@ -131,11 +130,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        let vc = self.window?.rootViewController as! ViewController
+        let toneId = SharedData.sharedInstance.lastAdId
+        sharedData.imageSource = UIImage(named: String(toneId))
+    
+            let adId = String(toneId)
+            if adId != sharedData.lastAdId {
+                sharedData.lastAdId = adId
+                sharedData.currentAdId = adId
+                let vc = self.window!.rootViewController as! ViewController
+                vc.adDetected()
+            }
         
-        vc.kolodaView.fadeIn(duration: 0.2)
-        vc.likenessButtonsView.fadeIn(duration: 0.2)
-        vc.detecterView.fadeOut()
+        
         
     }
     
