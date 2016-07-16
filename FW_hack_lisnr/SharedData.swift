@@ -26,6 +26,11 @@ class SharedData {
     
     var currentAdId : String!
     
+    var lastAdId : String!
+    
     var urlToLoad : String!
     
 }
+
+
+var sharedData = SharedData.sharedInstance

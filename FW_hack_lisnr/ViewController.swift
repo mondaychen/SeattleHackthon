@@ -11,9 +11,6 @@ import Koloda
 
 private var numberOfCards: UInt = 1
 
-private let sharedData = SharedData.sharedInstance
-
-
 class ViewController: UIViewController {
     
     @IBOutlet var parent: UIView!
@@ -34,8 +31,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        kolodaView.alpha = 0
-        likenessButtonsView.alpha = 0
+        if sharedData.currentAdId == nil {
+            kolodaView.alpha = 0
+            likenessButtonsView.alpha = 0
+            detecterView.alpha = 1
+        } else {
+            detecterView.alpha = 0
+            kolodaView.alpha = 1
+            likenessButtonsView.alpha = 1
+            kolodaView.resetCurrentCardIndex()
+        }
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
@@ -47,15 +52,14 @@ class ViewController: UIViewController {
     func adDetected() {
         kolodaView.fadeIn(duration: 0.2)
         likenessButtonsView.fadeIn(duration: 0.2)
+        kolodaView.resetCurrentCardIndex()
         detecterView.fadeOut()
     }
     
     
     //MARK: IBActions
     @IBAction func fakeAdDetected(sender: AnyObject) {
-        kolodaView.fadeIn(duration: 0.2)
-        likenessButtonsView.fadeIn(duration: 0.2)
-        detecterView.fadeOut()
+        self.adDetected()
     }
     @IBAction func leftButtonTapped() {
         kolodaView?.swipe(SwipeResultDirection.Left)
@@ -85,6 +89,9 @@ extension ViewController: KolodaViewDelegate {
         let actionVC = self.storyboard?.instantiateViewControllerWithIdentifier("Actions") as! ActionsViewController
         self.presentViewController(actionVC, animated: true, completion: nil)
         likenessButtonsView.fadeOut(duration: 0.2)
+        kolodaView.fadeOut(duration: 0.2)
+        detecterView.fadeIn(duration: 0.2)
+        sharedData.currentAdId = nil
     }
 }
 

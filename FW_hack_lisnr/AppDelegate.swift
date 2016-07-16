@@ -108,11 +108,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
 //                    }
             if let dataFromString = content.contentNotificationText()!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
                 let json = JSON(data: dataFromString)
-                print(json)
+                
+                let adId = json["id"].stringValue
+                if adId != sharedData.lastAdId {
+                    sharedData.lastAdId = adId
+                    sharedData.currentAdId = adId
+                    let vc = self.window!.rootViewController as! ViewController
+                    print(vc)
+                    vc.adDetected()
+                }
             }
-            let vc = self.window?.rootViewController as! ViewController
             
-            vc.adDetected()
         }
     }
     
