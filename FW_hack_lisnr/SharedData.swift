@@ -31,6 +31,7 @@ class SharedData {
     var urlToLoad : String!
     
     var imageSource : UIImage!
+    let urlToGifLoad : String = "https://31.media.tumblr.com/8f648ca8b5cb7848c66706c68d7fed54/tumblr_n7f9955y7h1shpedgo1_500.gif"
     
 }
 

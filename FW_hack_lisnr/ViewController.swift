@@ -18,10 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var likenessButtonsView: UIView!
 
+    @IBOutlet weak var WebGIf: UIWebView!
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 0.078, green: 0.078, blue: 0.078, alpha: 1.00)
+        
         
         if sharedData.currentAdId == nil {
             kolodaView.alpha = 0
@@ -38,6 +41,10 @@ class ViewController: UIViewController {
         kolodaView.delegate = self
         
         self.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        WebGIf.opaque = false;
+        WebGIf.backgroundColor = UIColor.clearColor()
+        let htmlString = "<!DOCTYPE html><html> <head> <style> body {background-color: #141414; } h1 {color: white; text-align: center; } p {font-family: sans-serif; font-size: 20px;} </style> </head> <body> <br/><br/><br/><br/><img width=\"310px\" src=\"https://31.media.tumblr.com/8f648ca8b5cb7848c66706c68d7fed54/tumblr_n7f9955y7h1shpedgo1_500.gif\"><br/><br/></img> <h1>Listening...</h1> </body> </html>"
+        WebGIf.loadHTMLString(htmlString, baseURL: nil)
         
     }
     
