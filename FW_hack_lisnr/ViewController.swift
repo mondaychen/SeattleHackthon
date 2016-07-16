@@ -77,8 +77,8 @@ class ViewController: UIViewController, LISNRServiceDelegate{
     
     //MARK: IBActions
     @IBAction func fakeAdDetected(sender: AnyObject) {
-        kolodaView.fadeIn()
-        likenessButtonsView.fadeIn()
+        kolodaView.fadeIn(duration: 0.2)
+        likenessButtonsView.fadeIn(duration: 0.2)
         detecterView.fadeOut()
     }
     @IBAction func leftButtonTapped() {
@@ -131,10 +131,9 @@ class ViewController: UIViewController, LISNRServiceDelegate{
 extension ViewController: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
-//        dataSource.insert(UIImage(named: "Card_like_6")!, atIndex: kolodaView.currentCardIndex - 1)
-//        let position = kolodaView.currentCardIndex
-//        kolodaView.insertCardAtIndexRange(position...position, animated: true)
-        kolodaView.resetCurrentCardIndex()
+//        kolodaView.resetCurrentCardIndex()
+        let actionVC = self.storyboard?.instantiateViewControllerWithIdentifier("Actions") as! ActionsViewController
+        self.presentViewController(actionVC, animated: true, completion: nil)
         likenessButtonsView.fadeOut(duration: 0.2)
     }
 }
