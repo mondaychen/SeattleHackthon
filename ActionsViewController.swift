@@ -7,7 +7,6 @@
 //
 
 import UIKit
-private let sharedData = SharedData.sharedInstance
 
 class ActionsViewController: UIViewController {
 

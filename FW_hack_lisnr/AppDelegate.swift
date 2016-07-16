@@ -10,7 +10,7 @@ import UIKit
 
 let LISNRServiceAPIKey = "f26b1887-eb2e-48ff-9644-3f75f72652bb"
 var backgrounded:Bool!
-
+var sharedData = SharedData.sharedInstance
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LISNRContentManagerDelegate  {
 
@@ -92,20 +92,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
     func didReceiveContent(content: LISNRBaseContentProtocol, forIDToneWithId toneId: UInt) {
         
         print("Did receive content")
-
+        sharedData.imageSource = UIImage(named: String(toneId))
+        
         if(backgrounded!) {
             self.presentNotificationForContent(content)
         } else {
-//                    if let videoContent = content as? LISNRVideoContentProtocol {
-//                        self.handleVideoContent(videoContent)
-//                    } else if let imageContent = content as? LISNRImageContentProtocol {
-//                        self.handleImageContent(imageContent)
-//                    } else if let webContent = content as? LISNRWebContentProtocol {
-//                        self.handleWebContent(webContent)
-//                    } else if let notificationContent = content as? LISNRNotificationContentProtocol {
-//                        self.handleNotificationContent(notificationContent)
-//                    }
             let vc = self.window?.rootViewController as! ViewController
+            vc.kolodaView.resetCurrentCardIndex()
             
             vc.kolodaView.fadeIn(duration: 0.2)
             vc.likenessButtonsView.fadeIn(duration: 0.2)

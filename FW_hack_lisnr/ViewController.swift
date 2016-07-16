@@ -11,8 +11,6 @@ import Koloda
 
 private var numberOfCards: UInt = 1
 
-private let sharedData = SharedData.sharedInstance
-
 
 class ViewController: UIViewController {
     
@@ -21,14 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var likenessButtonsView: UIView!
 
-    private var imageSource: Array<UIImage> = {
-        var array: Array<UIImage> = []
-        for index in 0..<numberOfCards {
-            array.append(UIImage(named: "Card_like_\(index + 1)")!)
-        }
-        
-        return array
-    }()
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -86,11 +76,11 @@ extension ViewController: KolodaViewDelegate {
 extension ViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(koloda:KolodaView) -> UInt {
-        return UInt(imageSource.count)
+        return UInt(sharedData.imageSource == nil ? 0 : 1)
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        return UIImageView(image: imageSource[Int(index)])
+        return UIImageView(image: sharedData.imageSource)
     }
     
     func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
