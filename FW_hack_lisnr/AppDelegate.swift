@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRContentManagerDelega
     func didReceiveContent(content: LISNRBaseContentProtocol, forIDToneWithId toneId: UInt) {
         
         print("Did receive content")
-        
+
         if(backgrounded!) {
             self.presentNotificationForContent(content)
         } else {
@@ -69,7 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRContentManagerDelega
 //                    } else if let notificationContent = content as? LISNRNotificationContentProtocol {
 //                        self.handleNotificationContent(notificationContent)
 //                    }
-                }
+            let vc = self.window?.rootViewController as! ViewController
+            
+            vc.kolodaView.fadeIn(duration: 0.2)
+            vc.likenessButtonsView.fadeIn(duration: 0.2)
+            vc.detecterView.fadeOut()
+        }
     }
     
     
