@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, LISNRContentManagerDelegate  {
@@ -69,6 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRContentManagerDelega
 //                    } else if let notificationContent = content as? LISNRNotificationContentProtocol {
 //                        self.handleNotificationContent(notificationContent)
 //                    }
+            if let dataFromString = content.contentNotificationText()!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+                let json = JSON(data: dataFromString)
+                print(json)
+            }
             let vc = self.window?.rootViewController as! ViewController
             
             vc.kolodaView.fadeIn(duration: 0.2)
