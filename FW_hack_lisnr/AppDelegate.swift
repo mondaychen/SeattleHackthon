@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 let LISNRServiceAPIKey = "f26b1887-eb2e-48ff-9644-3f75f72652bb"
 var backgrounded:Bool!
@@ -97,12 +98,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
         if(backgrounded!) {
             self.presentNotificationForContent(content)
         } else {
+            if let dataFromString = content.contentNotificationText()!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+                let json = JSON(data: dataFromString)
+                print(json)
+            }
             let vc = self.window?.rootViewController as! ViewController
             vc.kolodaView.resetCurrentCardIndex()
             
-            vc.kolodaView.fadeIn(duration: 0.2)
-            vc.likenessButtonsView.fadeIn(duration: 0.2)
-            vc.detecterView.fadeOut()
+            vc.adDetected()
         }
     }
     

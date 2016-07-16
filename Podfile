@@ -6,5 +6,6 @@ target 'FW_hack_lisnr' do
   use_frameworks!
 
   pod "Koloda"
+  pod "SwiftyJSON"
 
 end

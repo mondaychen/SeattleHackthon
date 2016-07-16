@@ -14,13 +14,9 @@ class ActionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let url = NSURL (string: sharedData.urlToLoad)
-        let requestObj = NSURLRequest(URL: url!);
-        webView.loadRequest(requestObj)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let url = NSURL (string: sharedData.urlToLoad)
         let requestObj = NSURLRequest(URL: url!);
