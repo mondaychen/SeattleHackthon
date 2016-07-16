@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3316A1391D39B75500B2A753 /* libLISNR-SDK-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3316A1311D39B75500B2A753 /* libLISNR-SDK-iOS.a */; };
+		3316A13C1D39B79000B2A753 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3316A13B1D39B79000B2A753 /* AVFoundation.framework */; };
+		3316A13E1D39B79800B2A753 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3316A13D1D39B79800B2A753 /* AdSupport.framework */; };
+		3316A1401D39B7A100B2A753 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3316A13F1D39B7A100B2A753 /* UIKit.framework */; };
+		3316A1421D39B7AD00B2A753 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3316A1411D39B7AD00B2A753 /* MediaPlayer.framework */; };
 		BD8A946D1D39515100DF8D86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A946C1D39515100DF8D86 /* AppDelegate.swift */; };
 		BD8A946F1D39515100DF8D86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A946E1D39515100DF8D86 /* ViewController.swift */; };
 		BD8A94721D39515100DF8D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8A94701D39515100DF8D86 /* Main.storyboard */; };
@@ -42,6 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3316A1311D39B75500B2A753 /* libLISNR-SDK-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libLISNR-SDK-iOS.a"; sourceTree = "<group>"; };
+		3316A1321D39B75500B2A753 /* LISNRContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LISNRContentManager.h; sourceTree = "<group>"; };
+		3316A1331D39B75500B2A753 /* LISNRContentProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LISNRContentProtocols.h; sourceTree = "<group>"; };
+		3316A1341D39B75500B2A753 /* LISNRDataTone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LISNRDataTone.h; sourceTree = "<group>"; };
+		3316A1351D39B75500B2A753 /* LISNRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LISNRService.h; sourceTree = "<group>"; };
+		3316A1361D39B75500B2A753 /* LISNRSmartListeningManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LISNRSmartListeningManager.h; sourceTree = "<group>"; };
+		3316A1371D39B75500B2A753 /* LISNRTextTone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LISNRTextTone.h; sourceTree = "<group>"; };
+		3316A1381D39B75500B2A753 /* LISNRTone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LISNRTone.h; sourceTree = "<group>"; };
+		3316A13A1D39B77500B2A753 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		3316A13B1D39B79000B2A753 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3316A13D1D39B79800B2A753 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		3316A13F1D39B7A100B2A753 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3316A1411D39B7AD00B2A753 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		70FE137AC98F76F8520B7D3E /* Pods_FW_hack_lisnrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FW_hack_lisnrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BE1A106884E5357E6A5395 /* Pods_FW_hack_lisnrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FW_hack_lisnrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8A94691D39515100DF8D86 /* FW_hack_lisnr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FW_hack_lisnr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +92,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3316A1421D39B7AD00B2A753 /* MediaPlayer.framework in Frameworks */,
+				3316A1401D39B7A100B2A753 /* UIKit.framework in Frameworks */,
+				3316A13E1D39B79800B2A753 /* AdSupport.framework in Frameworks */,
+				3316A13C1D39B79000B2A753 /* AVFoundation.framework in Frameworks */,
 				F0D8455205AA736CFC6EF1B9 /* Pods_FW_hack_lisnr.framework in Frameworks */,
+				3316A1391D39B75500B2A753 /* libLISNR-SDK-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +118,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3316A1301D39B73300B2A753 /* LISNR-SDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3316A1311D39B75500B2A753 /* libLISNR-SDK-iOS.a */,
+				3316A1321D39B75500B2A753 /* LISNRContentManager.h */,
+				3316A1331D39B75500B2A753 /* LISNRContentProtocols.h */,
+				3316A1341D39B75500B2A753 /* LISNRDataTone.h */,
+				3316A1351D39B75500B2A753 /* LISNRService.h */,
+				3316A1361D39B75500B2A753 /* LISNRSmartListeningManager.h */,
+				3316A1371D39B75500B2A753 /* LISNRTextTone.h */,
+				3316A1381D39B75500B2A753 /* LISNRTone.h */,
+			);
+			name = "LISNR-SDK-iOS";
+			sourceTree = "<group>";
+		};
 		6E3BDB08D3D49E0CFE7818F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3316A1411D39B7AD00B2A753 /* MediaPlayer.framework */,
+				3316A13F1D39B7A100B2A753 /* UIKit.framework */,
+				3316A13D1D39B79800B2A753 /* AdSupport.framework */,
+				3316A13B1D39B79000B2A753 /* AVFoundation.framework */,
 				C1914A3BD1EF4325D5914D46 /* Pods_FW_hack_lisnr.framework */,
 				70FE137AC98F76F8520B7D3E /* Pods_FW_hack_lisnrTests.framework */,
 				A7BE1A106884E5357E6A5395 /* Pods_FW_hack_lisnrUITests.framework */,
@@ -139,6 +181,7 @@
 		BD8A946B1D39515100DF8D86 /* FW_hack_lisnr */ = {
 			isa = PBXGroup;
 			children = (
+				3316A1301D39B73300B2A753 /* LISNR-SDK-iOS */,
 				BD8A946C1D39515100DF8D86 /* AppDelegate.swift */,
 				BD8A946E1D39515100DF8D86 /* ViewController.swift */,
 				BD8A949E1D397C5E00DF8D86 /* BackgroundAnimationViewController.swift */,
@@ -152,6 +195,7 @@
 				BD8A94A81D3984C900DF8D86 /* OverlayView.xib */,
 				BD8A94751D39515100DF8D86 /* LaunchScreen.storyboard */,
 				BD8A94781D39515100DF8D86 /* Info.plist */,
+				3316A13A1D39B77500B2A753 /* Bridging-Header.h */,
 			);
 			path = FW_hack_lisnr;
 			sourceTree = "<group>";
@@ -597,8 +641,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FW_hack_lisnr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FW_hack_lisnr",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Koloda\"",
+					"-framework",
+					"\"pop\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.FreeWheel.FW-hack-lisnr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -609,8 +666,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FW_hack_lisnr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FW_hack_lisnr",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Koloda\"",
+					"-framework",
+					"\"pop\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.FreeWheel.FW-hack-lisnr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};
