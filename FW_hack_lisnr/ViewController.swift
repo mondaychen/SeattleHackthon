@@ -72,8 +72,11 @@ extension ViewController: KolodaViewDelegate {
     }
     
     func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
-        sharedData.urlToLoad = (direction == SwipeResultDirection.Left) ? "https://google.com" : "http://freewheel.tv"
-        
+        let dislikeUrl = "http://striveforfreedom.net:8080/index.html?tone_id=\(sharedData.lastAdId)&type=dislike"
+        let likeUrl = "http://striveforfreedom.net:8080/index.html?tone_id=\(sharedData.lastAdId)&type=like"
+        print(dislikeUrl)
+        print(likeUrl)
+        sharedData.urlToLoad = (direction == SwipeResultDirection.Left) ? dislikeUrl : likeUrl
         let actionVC = self.storyboard?.instantiateViewControllerWithIdentifier("Actions") as! ActionsViewController
         self.presentViewController(actionVC, animated: true, completion: nil)
         likenessButtonsView.fadeOut(duration: 0.2)
