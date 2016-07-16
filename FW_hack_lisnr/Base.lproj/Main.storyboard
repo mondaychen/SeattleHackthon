@@ -40,37 +40,9 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mnc-Dd-Z3X">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIq-Ka-lsq">
-                                        <rect key="frame" x="15" y="33" width="19" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="Tem-YK-PQD"/>
-                                            <constraint firstAttribute="width" constant="19" id="nas-ji-QD6"/>
-                                        </constraints>
-                                        <state key="normal" image="ic_card_from_bg">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="dh2-Wx-deB" kind="presentation" id="2pr-g7-IrK"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un4-e1-II6">
-                                        <rect key="frame" x="284" y="33" width="21" height="22"/>
-                                        <state key="normal" image="btn_undo">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="undoButtonTapped" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eRa-wx-0Rq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="AZK-3T-hPg"/>
-                                    <constraint firstAttribute="trailing" secondItem="Un4-e1-II6" secondAttribute="trailing" constant="15" id="Hvd-9L-8eF"/>
-                                    <constraint firstItem="yIq-Ka-lsq" firstAttribute="leading" secondItem="Mnc-Dd-Z3X" secondAttribute="leading" constant="15" id="Qt8-OF-yfM"/>
-                                    <constraint firstItem="Un4-e1-II6" firstAttribute="top" secondItem="Mnc-Dd-Z3X" secondAttribute="top" constant="33" id="hkg-Rp-tIJ"/>
-                                    <constraint firstItem="yIq-Ka-lsq" firstAttribute="top" secondItem="Mnc-Dd-Z3X" secondAttribute="top" constant="33" id="tzF-UF-my5"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-lH-olg">
@@ -327,8 +299,6 @@
         <image name="btn_like_pressed" width="32" height="32"/>
         <image name="btn_skip_normal" width="32" height="32"/>
         <image name="btn_skip_pressed" width="32" height="32"/>
-        <image name="btn_undo" width="21" height="21"/>
-        <image name="ic_card_from_bg" width="21" height="21"/>
         <image name="ic_koloda" width="21" height="21"/>
         <image name="ic_like" width="38" height="34"/>
         <image name="ic_skip" width="34" height="34"/>

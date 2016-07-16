@@ -61,10 +61,6 @@ class ViewController: UIViewController {
         kolodaView?.swipe(SwipeResultDirection.Right)
     }
     
-    @IBAction func undoButtonTapped() {
-        kolodaView?.revertAction()
-    }
-    
 
 }
 
