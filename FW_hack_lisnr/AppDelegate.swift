@@ -102,6 +102,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRContentManagerDelega
         localNotification.userInfo = ["uuid":uuid]
         UIApplication.sharedApplication().presentLocalNotificationNow(localNotification)
     }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        let vc = self.window?.rootViewController as! ViewController
+        
+        vc.kolodaView.fadeIn(duration: 0.2)
+        vc.likenessButtonsView.fadeIn(duration: 0.2)
+        vc.detecterView.fadeOut()
+        
+    }
 
 
 }
