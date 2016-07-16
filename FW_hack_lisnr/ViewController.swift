@@ -10,6 +10,8 @@ import UIKit
 import Koloda
 
 private var numberOfCards: UInt = 1
+
+private let sharedData = SharedData.sharedInstance
 let LISNRServiceAPIKey = "f26b1887-eb2e-48ff-9644-3f75f72652bb"
 var backgrounded:Bool!
 
@@ -132,6 +134,11 @@ extension ViewController: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
 //        kolodaView.resetCurrentCardIndex()
+    }
+    
+    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
+        sharedData.urlToLoad = (direction == SwipeResultDirection.Left) ? "https://google.com" : "http://freewheel.tv"
+        
         let actionVC = self.storyboard?.instantiateViewControllerWithIdentifier("Actions") as! ActionsViewController
         self.presentViewController(actionVC, animated: true, completion: nil)
         likenessButtonsView.fadeOut(duration: 0.2)
