@@ -9,8 +9,11 @@
 import UIKit
 import SwiftyJSON
 
+let LISNRServiceAPIKey = "f26b1887-eb2e-48ff-9644-3f75f72652bb"
+var backgrounded:Bool!
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LISNRContentManagerDelegate  {
+class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LISNRContentManagerDelegate  {
 
     var window: UIWindow?
     var currentContent: [String:AnyObject] = Dictionary()
@@ -24,6 +27,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRContentManagerDelega
             let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
+        
+        LISNRService.sharedService().configureWithApiKey(LISNRServiceAPIKey, completion: { (error: NSError?) -> Void in
+            
+            if error != nil {
+                //                let nav = self.window?.rootViewController as! UINavigationController
+                //                let vc = nav.viewControllers.first as! ViewController
+                //
+                //                dispatch_async(dispatch_get_main_queue()) {
+                //                    vc.startStopListeningButton.enabled = false
+                //                    vc.startStopListeningButton.setNeedsDisplay()
+                //                }
+                
+                print("Unable to start LISNRService. Error: \(error)")
+            }
+        })
+        
+        LISNRService.sharedService().addObserver(self)
+        LISNRService.sharedService().setUserAnalyticsIdentifier("Your uuid for user")
+        LISNRContentManager.sharedContentManager().configureWithLISNRService(LISNRService.sharedService())
+        LISNRContentManager.sharedContentManager().delegate = UIApplication.sharedApplication().delegate as? LISNRContentManagerDelegate
+        backgrounded = false
+        LISNRService.sharedService().startListeningWithCompletion({ (error) -> Void in
+            if error == nil {
+                //                self.startStopListeningButton.setTitle("Stop Listening", forState: UIControlState.Normal)
+                print("Start listening")
+                LISNRService.sharedService().enableBackgroundListening = true
+                
+            } else {
+                print("Unable to start listening . Error: \(error)")
+            }
+            
+        })
+
         return true
     }
 
@@ -111,6 +147,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRContentManagerDelega
         vc.detecterView.fadeOut()
         
     }
+    
+    
+    func didHearIDToneWithId(toneId: UInt, iterationIndex: UInt, timestamp: NSTimeInterval) {
+        // I am called on a background thread
+        // Uncomment me if you would like to receive every iteration of a tone
+        //        kolodaView.fadeIn()
+        //        likenessButtonsView.fadeIn()
+        //        detecterView.fadeOut()
+        
+        NSLog("I heard \(iterationIndex) of tone \(toneId)")
+    }
+    
+    func IDToneDidAppearWithId(toneId: UInt, atIteration iterationIndex: UInt, atTimestamp timestamp: NSTimeInterval) {
+        
+        //        dispatch_async(dispatch_get_main_queue()) {
+        //            let nav = self.window?.rootViewController as! UINavigationController
+        //            let vc = nav.viewControllers.first as! ViewController
+        //            vc.setActiveTone(String(toneId))
+        //        }
+        
+        NSLog("I am listening to tone \(toneId) \(iterationIndex) \(timestamp)")
+    }
+    
+    func IDToneDidDisappearWithId(toneId: UInt, duration: NSTimeInterval) {
+        //        dispatch_async(dispatch_get_main_queue()) {
+        //            let nav = self.window?.rootViewController as! UINavigationController
+        //            let vc = nav.viewControllers.first as! ViewController
+        //            vc.setInactive()
+        //        }
+        
+        NSLog("Tone \(toneId) ended after \(duration) seconds")
+    }
+    
+
 
 
 }
