@@ -93,19 +93,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
     func didReceiveContent(content: LISNRBaseContentProtocol, forIDToneWithId toneId: UInt) {
         
         print("Did receive content")
-
+        sharedData.imageSource = UIImage(named: String(toneId))
+        
         if(backgrounded!) {
             self.presentNotificationForContent(content)
         } else {
-//                    if let videoContent = content as? LISNRVideoContentProtocol {
-//                        self.handleVideoContent(videoContent)
-//                    } else if let imageContent = content as? LISNRImageContentProtocol {
-//                        self.handleImageContent(imageContent)
-//                    } else if let webContent = content as? LISNRWebContentProtocol {
-//                        self.handleWebContent(webContent)
-//                    } else if let notificationContent = content as? LISNRNotificationContentProtocol {
-//                        self.handleNotificationContent(notificationContent)
-//                    }
             if let dataFromString = content.contentNotificationText()!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
                 let json = JSON(data: dataFromString)
                 
@@ -114,11 +106,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
                     sharedData.lastAdId = adId
                     sharedData.currentAdId = adId
                     let vc = self.window!.rootViewController as! ViewController
-                    print(vc)
                     vc.adDetected()
                 }
             }
-            
         }
     }
     

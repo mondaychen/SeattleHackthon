@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class SharedData {
     class var sharedInstance: SharedData {
@@ -30,7 +30,8 @@ class SharedData {
     
     var urlToLoad : String!
     
+    var imageSource : UIImage!
+    
 }
-
 
 var sharedData = SharedData.sharedInstance
