@@ -10,15 +10,18 @@ import UIKit
 import Koloda
 
 private var numberOfCards: UInt = 1
-private let sharedData = SharedData.sharedInstance
 
-class ViewController: UIViewController {
+private let sharedData = SharedData.sharedInstance
+let LISNRServiceAPIKey = "f26b1887-eb2e-48ff-9644-3f75f72652bb"
+var backgrounded:Bool!
+
+class ViewController: UIViewController, LISNRServiceDelegate{
     
     @IBOutlet var parent: UIView!
     @IBOutlet weak var detecterView: UIView!
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var likenessButtonsView: UIView!
-    
+
     private var imageSource: Array<UIImage> = {
         var array: Array<UIImage> = []
         for index in 0..<numberOfCards {
@@ -39,6 +42,38 @@ class ViewController: UIViewController {
         kolodaView.delegate = self
         
         self.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        
+        LISNRService.sharedService().configureWithApiKey(LISNRServiceAPIKey, completion: { (error: NSError?) -> Void in
+            
+            if error != nil {
+//                let nav = self.window?.rootViewController as! UINavigationController
+//                let vc = nav.viewControllers.first as! ViewController
+//                
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    vc.startStopListeningButton.enabled = false
+//                    vc.startStopListeningButton.setNeedsDisplay()
+//                }
+                
+                print("Unable to start LISNRService. Error: \(error)")
+            }
+        })
+        
+        LISNRService.sharedService().addObserver(self)
+        LISNRService.sharedService().setUserAnalyticsIdentifier("Your uuid for user")
+        LISNRContentManager.sharedContentManager().configureWithLISNRService(LISNRService.sharedService())
+        LISNRContentManager.sharedContentManager().delegate = UIApplication.sharedApplication().delegate as? LISNRContentManagerDelegate
+        backgrounded = false
+        LISNRService.sharedService().startListeningWithCompletion({ (error) -> Void in
+            if error == nil {
+//                self.startStopListeningButton.setTitle("Stop Listening", forState: UIControlState.Normal)
+                print("Start listening")
+                LISNRService.sharedService().enableBackgroundListening = true
+
+            } else {
+                print("Unable to start listening . Error: \(error)")
+            }
+            
+        })
     }
     
     
@@ -59,6 +94,39 @@ class ViewController: UIViewController {
     @IBAction func undoButtonTapped() {
         kolodaView?.revertAction()
     }
+    
+    
+    func didHearIDToneWithId(toneId: UInt, iterationIndex: UInt, timestamp: NSTimeInterval) {
+        // I am called on a background thread
+        // Uncomment me if you would like to receive every iteration of a tone
+//        kolodaView.fadeIn()
+//        likenessButtonsView.fadeIn()
+//        detecterView.fadeOut()
+        NSLog("I heard \(iterationIndex) of tone \(toneId)")
+    }
+    
+    func IDToneDidAppearWithId(toneId: UInt, atIteration iterationIndex: UInt, atTimestamp timestamp: NSTimeInterval) {
+        
+//        dispatch_async(dispatch_get_main_queue()) {
+//            let nav = self.window?.rootViewController as! UINavigationController
+//            let vc = nav.viewControllers.first as! ViewController
+//            vc.setActiveTone(String(toneId))
+//        }
+        
+        NSLog("I am listening to tone \(toneId) \(iterationIndex) \(timestamp)")
+    }
+    
+    func IDToneDidDisappearWithId(toneId: UInt, duration: NSTimeInterval) {
+//        dispatch_async(dispatch_get_main_queue()) {
+//            let nav = self.window?.rootViewController as! UINavigationController
+//            let vc = nav.viewControllers.first as! ViewController
+//            vc.setInactive()
+//        }
+        
+        NSLog("Tone \(toneId) ended after \(duration) seconds")
+    }
+    
+
 }
 
 //MARK: KolodaViewDelegate
