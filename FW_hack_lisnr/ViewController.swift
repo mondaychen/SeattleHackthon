@@ -44,6 +44,12 @@ class ViewController: UIViewController {
         
     }
     
+    func adDetected() {
+        kolodaView.fadeIn(duration: 0.2)
+        likenessButtonsView.fadeIn(duration: 0.2)
+        detecterView.fadeOut()
+    }
+    
     
     //MARK: IBActions
     @IBAction func fakeAdDetected(sender: AnyObject) {

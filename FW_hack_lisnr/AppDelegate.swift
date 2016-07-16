@@ -112,9 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
             }
             let vc = self.window?.rootViewController as! ViewController
             
-            vc.kolodaView.fadeIn(duration: 0.2)
-            vc.likenessButtonsView.fadeIn(duration: 0.2)
-            vc.detecterView.fadeOut()
+            vc.adDetected()
         }
     }
     
