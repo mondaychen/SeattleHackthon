@@ -13,6 +13,8 @@ private var numberOfCards: UInt = 1
 
 class ViewController: UIViewController {
     
+    @IBOutlet var parent: UIView!
+    @IBOutlet weak var detecterView: UIView!
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var likenessButtonsView: UIView!
     
@@ -29,6 +31,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        kolodaView.alpha = 0
+        likenessButtonsView.alpha = 0
+        
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
@@ -37,6 +42,11 @@ class ViewController: UIViewController {
     
     
     //MARK: IBActions
+    @IBAction func fakeAdDetected(sender: AnyObject) {
+        kolodaView.fadeIn()
+        likenessButtonsView.fadeIn()
+        detecterView.fadeOut()
+    }
     @IBAction func leftButtonTapped() {
         kolodaView?.swipe(SwipeResultDirection.Left)
     }
@@ -59,10 +69,6 @@ extension ViewController: KolodaViewDelegate {
 //        kolodaView.insertCardAtIndexRange(position...position, animated: true)
         kolodaView.resetCurrentCardIndex()
         likenessButtonsView.fadeOut(duration: 0.2)
-    }
-
-    func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://yalantis.com/")!)
     }
 }
 
@@ -102,9 +108,12 @@ extension UIView {
      - parameter duration: custom animation duration
      */
     func fadeOut(duration duration: NSTimeInterval = 1.0) {
-        UIView.animateWithDuration(duration, animations: {
-            self.alpha = 0.0
-        })
+        UIView.animateWithDuration(
+            duration,
+            animations: {
+                self.alpha = 0.0
+            }
+        )
     }
     
 }
