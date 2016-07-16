@@ -7,6 +7,7 @@
 //
 
 import UIKit
+private let sharedData = SharedData.sharedInstance
 
 class ActionsViewController: UIViewController {
 
@@ -15,7 +16,14 @@ class ActionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSURL (string: "https://google.com")
+        let url = NSURL (string: sharedData.urlToLoad)
+        let requestObj = NSURLRequest(URL: url!);
+        webView.loadRequest(requestObj)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let url = NSURL (string: sharedData.urlToLoad)
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj)
     }

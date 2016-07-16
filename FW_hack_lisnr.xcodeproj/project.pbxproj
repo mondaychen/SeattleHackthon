@@ -27,6 +27,7 @@
 		BD8A94A71D397C7200DF8D86 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A94A51D397C7200DF8D86 /* CustomOverlayView.swift */; };
 		BD8A94AA1D3984C900DF8D86 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8A94A81D3984C900DF8D86 /* OverlayView.xib */; };
 		BD8A94B01D39BBFE00DF8D86 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A94AF1D39BBFE00DF8D86 /* ActionsViewController.swift */; };
+		BD8A94B21D39CE0600DF8D86 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A94B11D39CE0600DF8D86 /* SharedData.swift */; };
 		F0D8455205AA736CFC6EF1B9 /* Pods_FW_hack_lisnr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1914A3BD1EF4325D5914D46 /* Pods_FW_hack_lisnr.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		BD8A94A51D397C7200DF8D86 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		BD8A94A91D3984C900DF8D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OverlayView.xib; sourceTree = "<group>"; };
 		BD8A94AF1D39BBFE00DF8D86 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsViewController.swift; path = ../ActionsViewController.swift; sourceTree = "<group>"; };
+		BD8A94B11D39CE0600DF8D86 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		C1914A3BD1EF4325D5914D46 /* Pods_FW_hack_lisnr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FW_hack_lisnr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D5DA3E0687427AC8833962 /* Pods-FW_hack_lisnr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FW_hack_lisnr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FW_hack_lisnr/Pods-FW_hack_lisnr.debug.xcconfig"; sourceTree = "<group>"; };
 		FE082169D17153B7FEE1C078 /* Pods-FW_hack_lisnr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FW_hack_lisnr.release.xcconfig"; path = "Pods/Target Support Files/Pods-FW_hack_lisnr/Pods-FW_hack_lisnr.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				BD8A94751D39515100DF8D86 /* LaunchScreen.storyboard */,
 				BD8A94781D39515100DF8D86 /* Info.plist */,
 				3316A13A1D39B77500B2A753 /* Bridging-Header.h */,
+				BD8A94B11D39CE0600DF8D86 /* SharedData.swift */,
 			);
 			path = FW_hack_lisnr;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8A94B21D39CE0600DF8D86 /* SharedData.swift in Sources */,
 				BD8A94A01D397C5E00DF8D86 /* BackgroundAnimationViewController.swift in Sources */,
 				BD8A94A31D397C6A00DF8D86 /* ExampleOverlayView.swift in Sources */,
 				BD8A94A71D397C7200DF8D86 /* CustomOverlayView.swift in Sources */,
