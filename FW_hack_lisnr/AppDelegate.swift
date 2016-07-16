@@ -92,16 +92,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
 
     func didReceiveContent(content: LISNRBaseContentProtocol, forIDToneWithId toneId: UInt) {
         
-        print("Did receive content")
+        print("Did receive content, \(toneId)")
         sharedData.imageSource = UIImage(named: String(toneId))
         
         if(backgrounded!) {
             self.presentNotificationForContent(content)
         } else {
-            if let dataFromString = content.contentNotificationText()!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-                let json = JSON(data: dataFromString)
-                
-                let adId = json["id"].stringValue
+                let adId = String(toneId)
                 if adId != sharedData.lastAdId {
                     sharedData.lastAdId = adId
                     sharedData.currentAdId = adId
@@ -109,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LISNRServiceDelegate, LIS
                     vc.adDetected()
                 }
             }
-        }
+        
     }
     
     
