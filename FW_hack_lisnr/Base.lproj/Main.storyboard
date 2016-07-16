@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -255,6 +256,71 @@
             </objects>
             <point key="canvasLocation" x="951" y="901"/>
         </scene>
+        <!--Actions View Controller-->
+        <scene sceneID="uDL-Ar-Y5P">
+            <objects>
+                <viewController storyboardIdentifier="Actions" id="pqd-Y1-jL1" customClass="ActionsViewController" customModule="FW_hack_lisnr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="36J-zi-67l"/>
+                        <viewControllerLayoutGuide type="bottom" id="paG-ko-Mqt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="680-eg-3UO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8IX-BR-R4B">
+                                <rect key="frame" x="0.0" y="49" width="320" height="519"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDO-7M-5sh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yib-fY-A9I">
+                                        <rect key="frame" x="260" y="11" width="39" height="30"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="presentation" id="VDn-8O-BVr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Yib-fY-A9I" secondAttribute="trailing" constant="25" id="Be2-eZ-RfL"/>
+                                    <constraint firstItem="Yib-fY-A9I" firstAttribute="top" secondItem="wDO-7M-5sh" secondAttribute="top" constant="15" id="GcC-mY-fhV"/>
+                                    <constraint firstAttribute="height" constant="50" id="H2y-Db-cFj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8IX-BR-R4B" firstAttribute="top" secondItem="wDO-7M-5sh" secondAttribute="bottom" id="1wu-5S-dYm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wDO-7M-5sh" secondAttribute="trailing" constant="-20" id="A89-MY-uN7"/>
+                            <constraint firstItem="wDO-7M-5sh" firstAttribute="top" secondItem="680-eg-3UO" secondAttribute="topMargin" id="HoZ-8m-8OI"/>
+                            <constraint firstItem="8IX-BR-R4B" firstAttribute="leading" secondItem="680-eg-3UO" secondAttribute="leadingMargin" constant="-20" id="OV3-od-bft"/>
+                            <constraint firstItem="paG-ko-Mqt" firstAttribute="top" secondItem="8IX-BR-R4B" secondAttribute="bottom" id="ax6-kR-ick"/>
+                            <constraint firstItem="8IX-BR-R4B" firstAttribute="top" secondItem="680-eg-3UO" secondAttribute="topMargin" id="gA4-PG-DLU"/>
+                            <constraint firstItem="wDO-7M-5sh" firstAttribute="leading" secondItem="680-eg-3UO" secondAttribute="leadingMargin" constant="-20" id="hbQ-mt-P2q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8IX-BR-R4B" secondAttribute="trailing" constant="-20" id="mIm-9K-vgr"/>
+                            <constraint firstItem="8IX-BR-R4B" firstAttribute="top" secondItem="680-eg-3UO" secondAttribute="topMargin" id="zuq-VJ-1vs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gA4-PG-DLU"/>
+                                <exclude reference="zuq-VJ-1vs"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="8IX-BR-R4B" id="PMy-3K-X2D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZj-zS-9hU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="-584"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn_like_normal" width="32" height="32"/>
@@ -268,4 +334,7 @@
         <image name="ic_skip" width="34" height="34"/>
         <image name="ic_undo" width="21" height="21"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vqN-lC-baD"/>
+    </inferredMetricsTieBreakers>
 </document>
